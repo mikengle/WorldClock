@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using WorldClock.Logic.BusinessObject;
 using WorldClock.Logic.Contracts;
 
 namespace WorldClock.Logic
 {
     internal class ClockController:IClockController
     {
+
+        public IClockView CreateClockView(string city, int hourOffset = 0, int minuteOffset = 0)
+        {
+            return new ClockView(Clock.GetInstance(),city, hourOffset, minuteOffset);
+        }
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
@@ -42,6 +45,8 @@ namespace WorldClock.Logic
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
         }
+
         #endregion
+
     }
 }
