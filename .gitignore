@@ -8,7 +8,6 @@
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -295,7 +294,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-*.sln
 # CodeRush personal settings
 .cr/personal
 
