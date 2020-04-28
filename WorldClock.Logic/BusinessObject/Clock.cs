@@ -18,11 +18,6 @@ namespace WorldClock.Logic.BusinessObject
             timer.Start();
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            TimerTick?.Invoke(this, DateTime.UtcNow); // UTC time
-        }
-
         internal static Clock GetInstance()
         {
             if (instance == null)
@@ -30,6 +25,11 @@ namespace WorldClock.Logic.BusinessObject
                 instance = new Clock();
             }
             return instance;
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            TimerTick?.Invoke(this, DateTime.UtcNow); // UTC time
         }
     }
 }
